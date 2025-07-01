@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Appointment Scheduler</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="HIPAA-compliant healthcare appointment scheduling platform">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>HealthScheduler</h1>
+            </div>
+            <div class="language-selector">
+                <select id="language-selector">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active" data-i18n="home">Home</a></li>
+                <li><a href="#about" data-i18n="about">About</a></li>
+                <li><a href="#services" data-i18n="services">Services</a></li>
+                <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                <li><a href="#appointments" class="btn-primary" data-i18n="book_appointment">Book Appointment</a></li>
+                <li class="auth-links">
+                    <a href="#login" id="login-btn" data-i18n="login">Login</a>
+                    <span>/</span>
+                    <a href="#signup" id="signup-btn" data-i18n="signup">Sign Up</a>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 data-i18n="hero_title">Your Health, Your Schedule</h2>
+                <p data-i18n="hero_subtitle">Book appointments with healthcare providers easily and securely.</p>
+                <div class="hero-buttons">
+                    <a href="#appointments" class="btn-primary" data-i18n="book_now">Book Now</a>
+                    <a href="#how-it-works" class="btn-secondary" data-i18n="how_it_works">How It Works</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x400" alt="Healthcare scheduling illustration">
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <h2 class="section-title" data-i18n="features">Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3 data-i18n="online_booking">Online Booking</h3>
+                    <p data-i18n="online_booking_desc">Book appointments anytime, anywhere through our user-friendly platform.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h3 data-i18n="reminders">Automated Reminders</h3>
+                    <p data-i18n="reminders_desc">Never miss an appointment with SMS and email reminders.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-video"></i>
+                    <h3 data-i18n="telehealth">Telehealth</h3>
+                    <p data-i18n="telehealth_desc">Connect with healthcare providers remotely through secure video consultations.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock"></i>
+                    <h3 data-i18n="security">HIPAA Compliance</h3>
+                    <p data-i18n="security_desc">Your health information is protected with enterprise-grade security.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3 data-i18n="wearable">Wearable Integration</h3>
+                    <p data-i18n="wearable_desc">Sync with your health devices for better appointment management.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3 data-i18n="multilingual">Multilingual Support</h3>
+                    <p data-i18n="multilingual_desc">Access our services in multiple languages for better accessibility.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="appointments" class="appointment-section">
+            <h2 class="section-title" data-i18n="book_appointment">Book an Appointment</h2>
+            <div class="appointment-container">
+                <div class="provider-search">
+                    <h3 data-i18n="find_provider">Find a Provider</h3>
+                    <div class="search-filters">
+                        <input type="text" id="provider-search" placeholder="Search by name, specialty, or location">
+                        <select id="specialty-filter">
+                            <option value="" data-i18n="all_specialties">All Specialties</option>
+                            <option value="primary">Primary Care</option>
+                            <option value="cardiology">Cardiology</option>
+                            <option value="dermatology">Dermatology</option>
+                            <option value="neurology">Neurology</option>
+                            <option value="orthopedics">Orthopedics</option>
+                            <option value="pediatrics">Pediatrics</option>
+                        </select>
+                        <button id="search-btn" class="btn-primary" data-i18n="search">Search</button>
+                    </div>
+                    <div class="provider-results">
+                        <!-- Provider results will be populated here by JavaScript -->
+                        <div class="provider-card">
+                            <div class="provider-info">
+                                <img src="https://placehold.co/100" alt="Dr. Jane Smith">
+                                <div>
+                                    <h4>Dr. Jane Smith</h4>
+                                    <p>Cardiology</p>
+                                    <p>New York Medical Center</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(128 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-secondary select-provider" data-i18n="select">Select</button>
+                        </div>
+                        <div class="provider-card">
+                            <div class="provider-info">
+                                <img src="https://placehold.co/100" alt="Dr. John Davis">
+                                <div>
+                                    <h4>Dr. John Davis</h4>
+                                    <p>Primary Care</p>
+                                    <p>Central Health Clinic</p>
+                                    <div class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(95 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-secondary select-provider" data-i18n="select">Select</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointment-calendar">
+                    <h3 data-i18n="select_date_time">Select Date & Time</h3>
+                    <div class="calendar-container">
+                        <!-- Calendar will be rendered here by JavaScript -->
+                        <div class="month-selector">
+                            <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                            <h4 id="current-month">November 2023</h4>
+                            <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="calendar">
+                            <!-- Calendar days will be rendered by JavaScript -->
+                        </div>
+                    </div>
+                    <div class="time-slots">
+                        <h4 data-i18n="available_times">Available Times</h4>
+                        <div class="time-slot-container">
+                            <!-- Time slots will be rendered by JavaScript -->
+                            <button class="time-slot">9:00 AM</button>
+                            <button class="time-slot">10:30 AM</button>
+                            <button class="time-slot">1:15 PM</button>
+                            <button class="time-slot">3:45 PM</button>
+                            <button class="time-slot">5:00 PM</button>
+                        </div>
+                    </div>
+                    <div class="appointment-type">
+                        <h4 data-i18n="appointment_type">Appointment Type</h4>
+                        <div class="appointment-type-options">
+                            <label>
+                                <input type="radio" name="appointment-type" value="in-person" checked>
+                                <span data-i18n="in_person">In-Person</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="appointment-type" value="telehealth">
+                                <span data-i18n="telehealth_appointment">Telehealth</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button id="confirm-appointment" class="btn-primary" data-i18n="confirm_appointment">Confirm Appointment</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <h2 class="section-title" data-i18n="how_it_works">How It Works</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 data-i18n="create_account">Create an Account</h3>
+                        <p data-i18n="create_account_desc">Sign up securely to access our healthcare scheduling platform.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 data-i18n="find_provider_step">Find a Provider</h3>
+                        <p data-i18n="find_provider_desc">Search for healthcare providers by specialty, location, or name.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 data-i18n="choose_time">Choose a Time</h3>
+                        <p data-i18n="choose_time_desc">Select a convenient date and time for your appointment.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 data-i18n="confirm_details">Confirm Details</h3>
+                        <p data-i18n="confirm_details_desc">Review and confirm your appointment details and receive confirmation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2 class="section-title" data-i18n="testimonials">What Our Users Say</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"This platform has made scheduling appointments so much easier. I love the reminders and telehealth options!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/60" alt="Sarah J.">
+                        <div>
+                            <h4>Sarah J.</h4>
+                            <p>Patient</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a healthcare provider, this system has streamlined my scheduling process and reduced no-shows significantly."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://placehold.co/60" alt="Dr. Michael R.">
+                        <div>
+                            <h4>Dr. Michael R.</h4>
+                            <p>Neurologist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 data-i18n="login">Login</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email" data-i18n="email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password" data-i18n="password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-actions">
+                    <a href="#forgot-password" data-i18n="forgot_password">Forgot Password?</a>
+                    <button type="submit" class="btn-primary" data-i18n="login">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 data-i18n="signup">Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name" data-i18n="full_name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email" data-i18n="email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-phone" data-i18n="phone">Phone</label>
+                    <input type="tel" id="signup-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password" data-i18n="password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm-password" data-i18n="confirm_password">Confirm Password</label>
+                    <input type="password" id="signup-confirm-password" required>
+                </div>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms-agreement" required>
+                    <label for="terms-agreement" data-i18n="agree_terms">I agree to the Terms and Privacy Policy</label>
+                </div>
+                <button type="submit" class="btn-primary" data-i18n="create_account_btn">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>HealthScheduler</h3>
+                <p data-i18n="footer_desc">Making healthcare appointments easy and accessible for everyone.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="quick_links">Quick Links</h3>
+                <ul>
+                    <li><a href="#" data-i18n="home">Home</a></li>
+                    <li><a href="#about" data-i18n="about">About</a></li>
+                    <li><a href="#services" data-i18n="services">Services</a></li>
+                    <li><a href="#contact" data-i18n="contact">Contact</a></li>
+                    <li><a href="#appointments" data-i18n="book_appointment">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="contact_us">Contact Us</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare St, Medical City, CA</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> support@healthscheduler.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="newsletter">Newsletter</h3>
+                <p data-i18n="newsletter_desc">Subscribe to our newsletter for the latest updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email" required>
+                    <button type="submit" class="btn-primary" data-i18n="subscribe">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 HealthScheduler. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#" data-i18n="privacy_policy">Privacy Policy</a>
+                <a href="#" data-i18n="terms">Terms of Service</a>
+                <a href="#" data-i18n="hipaa">HIPAA Compliance</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html> 
